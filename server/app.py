@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -8,6 +8,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = 'your_secret_key_here'  # Add a secret key for session
     CORS(app)
     db.init_app(app)
     migrate = Migrate(app, db)
@@ -15,7 +16,6 @@ def create_app():
     return app
 
 app = create_app()
-
 # ... (existing routes)
 
 @app.route('/get_user_recipes/<username>', methods=['GET'])
@@ -102,15 +102,15 @@ def login():
     username = data.get('username')
     password = data.get('password')
 
-    # Query the database to find the user with the given username
     user = User.query.filter_by(username=username).first()
 
     if user and user.password == password:
-        # Successful login
+        # Set user_id in session
+        session['user_id'] = user.id
         return jsonify({'message': 'Login successful'}), 200
     else:
-        # Invalid username or password
         return jsonify({'message': 'Invalid username or password'}), 401
+
 
 @app.route('/users', methods=['GET'])
 def get_users():
@@ -124,9 +124,10 @@ def get_users():
 @app.route('/create_recipe', methods=['POST'])
 def create_recipe():
     data = request.json
-    user_id = request.headers.get('UserId')  # Assuming user ID is sent in the headers
+    user_id = session.get('user_id')  # Correctly fetch user_id from session
+    
     if not user_id:
-        return jsonify({'error': 'User ID not provided in headers'}), 400
+        return jsonify({'error': 'User ID not provided in session'}), 400
 
     name = data.get('name')
     description = data.get('description')
@@ -134,12 +135,12 @@ def create_recipe():
     if not name or not description:
         return jsonify({'error': 'Name or description missing in request'}), 400
 
-
-    new_recipe = Recipe(name=name, description=description, user_id=user_id)
+    new_recipe = Recipe(name=name, description=description, user_id=user_id)  # Associate the user_id with the new recipe
     db.session.add(new_recipe)
     db.session.commit()
 
     return jsonify({'message': 'Recipe created successfully'}), 201
+
 
 @app.route('/recipes', methods=['GET'])
 def get_recipes():
@@ -150,22 +151,20 @@ def get_recipes():
         output.append(recipe_data)
     return jsonify({'recipes': output}), 200
 
-@app.route('/edit_recipe/<string:username>/<int:recipe_id>', methods=['PUT'])
-def edit_recipe(username, recipe_id):
-    print(request.url)  # Print the requested URL
-    print(request.method)  # Print the request method
+
+@app.route('/edit_recipe/<int:recipe_id>', methods=['PUT'])
+def edit_recipe(recipe_id):
     data = request.json
     name = data.get('name')
     description = data.get('description')
     
-    # Fetch the user based on the username
-    user = User.query.filter_by(username=username).first()
+    user_id = session.get('user_id')  # Correctly get the user_id from session
 
-    if not user:
-        return jsonify({'message': 'User not found'}), 404
+    if not user_id:
+        return jsonify({'error': 'User ID not provided in session'}), 400
 
     # Fetch the recipe to update
-    recipe = Recipe.query.filter_by(id=recipe_id, user_id=user.id).first()
+    recipe = Recipe.query.filter_by(id=recipe_id, user_id=user_id).first()
 
     if not recipe:
         return jsonify({'message': 'Recipe not found'}), 404
@@ -175,7 +174,6 @@ def edit_recipe(username, recipe_id):
     db.session.commit()
 
     return jsonify({'message': 'Recipe updated successfully'}), 200
-
 
   
 
@@ -192,6 +190,11 @@ def delete_recipe(recipe_id):
 
 @app.route('/favorited_recipes/<int:user_id>', methods=['GET'])
 def get_favorited_recipes(user_id):
+    user_id = session.get('user_id')  # Correctly fetch user_id from session
+
+    if not user_id:
+        return jsonify({'error': 'User ID not provided in session'}), 400
+
     favorited_recipes = FavoriteRecipe.query.filter_by(user_id=user_id).all()
     output = []
     for fav_recipe in favorited_recipes:

@@ -84,21 +84,26 @@ function EditRecipe({ username }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (!selectedRecipeId || selectedRecipeId === '') {
             console.error('No recipe selected');
             return;
         }
-
+    
+        const recipeData = {
+            name: recipe.name,
+            description: recipe.description,
+        };
+    
         try {
             setIsLoading(true);
-            const response = await fetch(`/edit_recipe/${username}/${selectedRecipeId}`, {
+            const response = await fetch(`/edit_recipe/${selectedRecipeId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`  // Use the token for authorization
+                    'UserId': username  // Pass the logged-in username in the headers
                 },
-                body: JSON.stringify(recipe)
+                body: JSON.stringify(recipeData)
             });
             const data = await response.json();
             if (response.ok) {
@@ -113,10 +118,6 @@ function EditRecipe({ username }) {
             setIsLoading(false);
         }
     };
-
-    if (isLoading) {
-        return <div>Loading...</div>;  // Display a loading message while fetching data
-    }
 
     return (
         <div>
