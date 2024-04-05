@@ -19,3 +19,11 @@ class FavoriteRecipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'recipe_id': self.recipe_id,
+            'user_id': self.user_id
+        }

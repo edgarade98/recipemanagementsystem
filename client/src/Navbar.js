@@ -59,6 +59,9 @@ function Navbar({ isLoggedIn, onLogout, username }) {
                     <>
                         <li><Link to="/dashboard">Dashboard</Link></li>
                         <li><Link to="/create-recipe">Create Recipe</Link></li>
+                        <li><Link to="/all-recipes">All Recipes</Link></li>
+                        <li><Link to="/my-recipes">My Recipes</Link></li>
+                        <li><Link to="/favorite-recipes">Favorite Recipes</Link></li> {/* New link for Favorite Recipes */}
                         <li>
                             <select onChange={(e) => navigate(`/edit_recipe/${username}/${e.target.value}`)}>
                                 <option value="">Edit Recipe</option>
