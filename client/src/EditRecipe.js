@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function EditRecipe({ username }) {
     const [recipes, setRecipes] = useState([]);
     const [selectedRecipeId, setSelectedRecipeId] = useState('');
+    const [message, setMessage] = useState('');
     const [recipe, setRecipe] = useState({
         name: '',
         description: ''
@@ -107,9 +108,12 @@ function EditRecipe({ username }) {
             });
             const data = await response.json();
             if (response.ok) {
-                console.log('Recipe updated successfully');
-                navigate('/dashboard'); // or wherever you want to navigate after editing
-            } else {
+                setMessage('Recipe updated successfully'); // Set success message
+                setTimeout(() => {
+                    setMessage(''); // Clear the success message after a certain time
+                    navigate('/my-recipes');
+                }, 3000);}
+                 else {
                 console.error('Error updating recipe:', data.message);
             }
         } catch (error) {
@@ -120,8 +124,13 @@ function EditRecipe({ username }) {
     };
 
     return (
-        <div>
+        <div className="form-container">
             <h2>Edit Recipe</h2>
+            {message && (
+                    <div className="success-message" style={{ color: 'green', fontWeight: 'bold', paddingBottom: 25 }}>
+                        {message}
+                    </div>
+                )}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="selectRecipe">Select Recipe:</label>

@@ -1,13 +1,10 @@
-// MyRecipes.js
-
-
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function MyRecipes({ username }) {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        // Fetch recipes created by the logged-in user
         const fetchMyRecipes = async () => {
             try {
                 const response = await fetch(`/get_user_recipes/${username}`);
@@ -25,15 +22,38 @@ function MyRecipes({ username }) {
         fetchMyRecipes();
     }, [username]);
 
+    const handleDeleteRecipe = async (recipeId) => {
+        try {
+            const response = await fetch(`/delete_recipe/${recipeId}`, {
+                method: 'DELETE',
+            });
+            const data = await response.json();
+            if (response.ok) {
+                // Filter out the deleted recipe from the recipes list
+                setRecipes(recipes.filter(recipe => recipe.id !== recipeId));
+                console.log('Recipe deleted successfully');
+            } else {
+                console.error('Error deleting recipe:', data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     return (
-        <div>
+      <div className="myrecipe-container">
             <h2>My Recipes</h2>
-            <ul>
+              <ul className="myrecipe-list">
                 {recipes.map(recipe => (
-                    <li key={recipe.id}>{recipe.name}</li>
-                ))}
-            </ul>
-        </div>
+            <li className="myrecipe-item" key={recipe.id}>
+             <h3>Recipe Name: {recipe.name}</h3>
+           <p><b>DESCRIPTION:</b> {recipe.description}</p>
+            <Link className='link' to={`/edit_recipe/${username}/${recipe.id}`}>Edit</Link>
+            <Link className='dlink' onClick={() => handleDeleteRecipe(recipe.id)}>Delete Recipe</Link>
+      </li>
+    ))}
+  </ul>
+</div>
     );
 }
 

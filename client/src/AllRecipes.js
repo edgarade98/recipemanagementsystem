@@ -43,21 +43,23 @@ const AllRecipes = () => {
   };
 
   return (
-    <div>
-      <h2>All Recipes</h2>
-      {recipes.length === 0 && <p>No recipes found.</p>}
-      {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <h3>{recipe.name}</h3>
-          <p>{recipe.description}</p>
-          <p>Created by: {recipe.user_id}</p>
-          <button onClick={() => handleFavorite(recipe.id)}>Favorite</button>
-          <hr />
-        </div>
-      ))}
-      {message && <p>{message}</p>}
-      <Link to="/dashboard">Go back to Dashboard</Link>
-    </div>
+<div className="recipe-container">
+  <h2>All Recipes</h2>
+  {recipes.length === 0 && <p className="message">No recipes found.</p>}
+  <div className="recipe-grid">
+    {recipes.map((recipe) => (
+      <div className="recipe-card" key={recipe.id}>
+        <h3>{recipe.name}</h3>
+        <p>{recipe.description}</p>
+        <p>Chef: {recipe.user_id}</p>
+        <button onClick={() => handleFavorite(recipe.id)}>Favorite</button>
+      </div>
+    ))}
+  </div>
+  {message && <p className="message" style={{color: 'green'}}>{message}</p>}
+  <Link className="link" to="/dashboard">Go back to Dashboard</Link>
+</div>
+
   );
 };
 

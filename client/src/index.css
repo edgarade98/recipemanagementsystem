@@ -5,9 +5,681 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.landing-page {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  background-color: #fc8d15;
+  height: max-content;
+  scroll-behavior: smooth;
+}
+.landing-page * {
+  transition: all 0.3s ease;
+}
+
+.landing-page h1 {
+  font-size: 2.5rem;
+  color: black;
+  font-family: monospace;
+}
+
+.landing-page p {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 50px; /* Adjust spacing between content and image */
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-family: monospace;
+  color: black;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: black;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding-right: 100px; /* Optional: Add border radius for a rounded image */
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+}
+.popular-recipes-section {
+  background-color: white;
+}
+.popular-recipes-section h2 {
+  color: black;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 30px;
+  padding-top: 25px;
+}
+
+.recipee-cards {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; 
+  padding-left: 20px;
+  padding-right: 20px;/* Distribute items evenly along the main axis */
+}
+
+.recipe-cards {
+  width: calc(50% - 10px); /* Set width to half of the container minus margin */
+  margin-right: 20px; /* Margin between cards */
+  padding: 40px; /* Padding for internal content */
+  border: 1px solid transparent;/* Border */
+  border-radius: 5px; /* Border radius */
+}
+
+.recipe-cards:last-child {
+  margin-right: 0; /* Remove margin from the last card */
+}
+
+.recipe-cards img {
+  max-width: 100%; /* Ensure images don't exceed container width */
+  height: auto;
+  border-radius: 5px; /* Optional: Add border radius for a rounded image */
+}
+
+.recipe-cards h3 {
+  margin-top: 20px; /* Remove default margin */
+  color: black;
+  font-family: monospace;
+}
+
+.recipe-cards p {
+  margin-bottom: 0; /* Remove default margin */
+  font-size: 14px;
+  color: black;
+}
+
+.about-section {
+  padding: 30px; /* Padding for internal content */
+  background-color: #222;
+}
+
+.about-section h2 {
+  font-size: 24px; /* Font size for section heading */
+  color: white; /* Text color */
+  margin-bottom: 30px; /* Margin bottom for spacing */
+  font-family: monospace;
+
+}
+
+.about-section p {
+  font-size: 16px; 
+  color: white; 
+  line-height: 1.6; /* Line height for readability */
+  margin-bottom: 45px; /* Margin bottom for spacing */
+}
+
+.about-section ul {
+  list-style-type: none; /* Bullet style */
+  margin-left: 20px; /* Margin left for indentation */
+}
+
+.about-section ul li {
+  font-size: 16px; /* Font size for list items */
+  color: white; 
+  margin-bottom: 10px;
+  
+}
+
+.footer {
+  background-color: white; /* Background color */
+  color: black; 
+}
+
+.footer-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space evenly between sections */
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto; /* Center align */
+}
+
+.footer-section {
+  flex: 1; /* Take up equal space */
+  margin-right: 30px; /* Space between sections */
+}
+
+.footer-section h3 {
+  font-size: 20px; 
+  margin-bottom: 20px; /* Bottom margin for spacing */
+  font-family: monospace;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0; /* Remove default padding */
+}
+
+.footer-section ul li {
+  font-size: 16px; /* Font size for list items */
+  margin-bottom: 10px; /* Bottom margin for spacing */
+}
+
+.footer-bottom {
+  background-color: #222; /* Background color for bottom section */
+  padding: 20px; /* Padding for internal content */
+  text-align: center; /* Center-align text */
+}
+
+.footer-bottom p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Font size */
+  color: white;
+}
+
+/*  NavBar Styling */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.431);
+}
+
+nav ul li {
+  margin: 0 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.navigation-link {
+  text-decoration: none;
+  color: #333;
+  display: grid;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+
+}
+
+nav ul li a:hover {
+  background-color: #222;
+  color: #fff;
+  border-radius: 5px;
+}
+
+nav ul li a.active {
+  color: #fff;
+  background-color: #333;
+}
+.navigation-container {
+  background-image: url(/Users/winnie/Recipe-Project/client/react-app/src/ba.jpg);
+  background-size: cover; /* Cover the entire element with the background image */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+}
+
+/***************************** Navigation ***************************/
+
+/* LoginForm.css */
+.login-container {
+  background-color: rgb(151, 151, 151); /* Background color for the form */
+  padding: 40px; /* Padding for spacing */
+  height: 100vh;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(17, 24, 39, 1);
+  height: 50vh;
+}
+.input-field {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login-form label {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 15px
+}
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* SignUpForm.css */
+
+.sign-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(17, 24, 39, 1);
+  height: 50vh;
+}
+
+.sign-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sign-form label {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 15px 
+}
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(17, 24, 39, 1);
+  color: white;
+  
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* NavBar Select CSS */
+
+.navbar-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.navbar-select:hover {
+  border-color: #999;
+}
+
+.navbar-select:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.navbar-select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.navbar-select option:hover {
+  background-color: #f2f2f2;
+}
+
+.navbar-select option:checked {
+  background-color: #ccc;
+  color: #fff;
+}
+
+/* Add Recipe Form */
+
+.add-recipe-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 400px;
+}
+.add-recipe-container h2 {
+  text-align: center;
+}
+
+.recipe-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea[id="description"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Edit Recipe CSS */
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 400px;
+}
+
+/* Apply styles to the form heading */
+.form-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Apply styles to form inputs and labels */
+.form-container label {
+  display: block; /* Make labels block elements for better alignment */
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container textarea,
+.form-container select {
+  width: 100%; /* Make inputs and select full width */
+  padding: 8px; /* Add padding for better appearance */
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Apply styles to the submit button */
+.form-container button[type="submit"] {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Add padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Add pointer cursor on hover */
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* All Recipe container CSS  */
+
+.recipe-container {
+  margin: 20px;
+}
+
+.recipe-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: monospace;
+  margin-top: 40px;
+}
+
+.recipe-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+
+}
+
+.recipe-card {
+  width: calc(33.33% - 10px); /* Set card width (1/3 of container width minus margin) */
+  margin: 10px; /* Add margin between cards */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0.9, 0.7, 0.5); /* Add shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.recipe-card p {
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.recipe-card button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recipe-card button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  font-size: 16px;
+  color: #FF0000;
+  margin-top: 10px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+
+/*  My Recipes CSS  */
+
+.myrecipe-container {
+  margin: 20px;
+}
+
+.myrecipe-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: monospace;
+  margin-top: 40px;
+}
+
+.myrecipe-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+}
+
+.myrecipe-item {
+  flex: 0 0 calc(33.33% - 20px); /* Set item width (1/3 of container width minus margin) */
+  background-color: #c9c5c5; /* Light background color */
+  padding: 20px; /* Add padding for spacing */
+  margin: 10px; /* Add margin between items */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.myrecipe-item h3 {
+  font-size: 24px; /* Font size for recipe name */
+  margin-bottom: 10px; /* Add some space below recipe name */
+  text-align: center;
+}
+
+.myrecipe-item p {
+  font-size: 16px; /* Font size for description */
+  margin-bottom: 10px; /* Add some space below description */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.dlink {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 300px;
+}
+
+/* Favorites Section CSS  */
+
+.favrecipe-container {
+  margin: 20px;
+}
+
+.favrecipe-container h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+  font-family: monospace;
+}
+
+.favrecipe-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+}
+
+.favrecipe-item {
+  flex: 0 0 calc(33.33% - 20px); /* Set item width (1/3 of container width minus margin) */
+  background-color: #c9c5c5; /* Light background color */
+  padding: 20px; /* Add padding for spacing */
+  margin: 10px; /* Add margin between items */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.favrecipe-item h3 {
+  font-size: 24px; /* Font size for recipe name */
+  margin-bottom: 10px; /* Add some space below recipe name */
+  text-align: center;
+}
+
+.favrecipe-item p {
+  font-size: 16px; /* Font size for description */
+  margin-bottom: 10px; /* Add some space below description */
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+

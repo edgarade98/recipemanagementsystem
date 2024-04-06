@@ -36,13 +36,13 @@ function FavoriteRecipes() {
     }
 
     return (
-        <div>
-            <h2>Favorite Recipes</h2>
-            <ul>
+        <div className="favrecipe-container">
+            <h2>Favorite Recipes </h2>
+            <ul className="favrecipe-list">
                 {favoriteRecipes.map(recipe => (
-                    <li key={recipe.id}>
-                        <p>{recipe.name}</p>
-                        <p>{recipe.description}</p>
+                    <li className="favrecipe-item" key={recipe.id}>
+                        <h3>{recipe.name}</h3>
+                        <p><b>Description:</b> {recipe.description}</p>
                     </li>
                 ))}
             </ul>

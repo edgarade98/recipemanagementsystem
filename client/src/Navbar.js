@@ -48,41 +48,40 @@ function Navbar({ isLoggedIn, onLogout, username }) {
     };
 
     return (
+        <div className="navigation-container">
         <nav>
-            <ul>
+            <ul className ="navigation-links">
                 {!isLoggedIn ? (
                     <>
-                        <li><Link to="/create-user">Create User</Link></li>
-                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/create-user" className="navigation-link">Create User</Link></li>
+                        <br></br>
+                        <li><Link to="/login" className="navigation-link">Login</Link></li>
+                        <li><Link to="/" className='navigation-link'>HOME</Link></li>
                     </>
                 ) : (
                     <>
                         <li><Link to="/dashboard">Dashboard</Link></li>
-                        <li><Link to="/create-recipe">Create Recipe</Link></li>
                         <li><Link to="/all-recipes">All Recipes</Link></li>
+                        <li><Link to="/create-recipe">Create Recipe</Link></li>
                         <li><Link to="/my-recipes">My Recipes</Link></li>
                         <li><Link to="/favorite-recipes">Favorite Recipes</Link></li> {/* New link for Favorite Recipes */}
-                        <li>
-                            <select onChange={(e) => navigate(`/edit_recipe/${username}/${e.target.value}`)}>
-                                <option value="">Edit Recipe</option>
-                                {recipes.map(recipe => (
-                                    <option key={recipe.id} value={recipe.id}>{recipe.name}</option>
-                                ))}
-                            </select>
-                        </li>
-                        <li>
-                            <select onChange={(e) => handleRecipeDelete(e.target.value)}>
-                                <option value="">Delete Recipe</option>
-                                {recipes.map(recipe => (
-                                    <option key={recipe.id} value={recipe.id}>{recipe.name}</option>
-                                ))}
-                            </select>
-                        </li>
-                        <li><Link to="/" onClick={handleLogoutClick}>Logout</Link></li>
+        
+                        <li><Link to="/" onClick={handleLogoutClick}
+                        style={{
+                            top: 15,
+                            right: 10,
+                            color: 'red',
+                            height: 50,
+                            width: 80,
+                            fontWeight: 600,
+                            borderRadius: 10,
+                            cursor: 'pointer',
+                          }}>Logout</Link></li>
                     </>
                 )}
             </ul>
         </nav>
+        </div>
     );
 }
 

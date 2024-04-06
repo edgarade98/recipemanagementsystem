@@ -13,7 +13,7 @@ function CreateRecipe({ user_id }) {
         const recipeData = {
             name: name,
             description: description,
-            user: user_id// Associate the new recipe with the logged-in user
+            user: user_id // Associate the new recipe with the logged-in user
         };
 
         try {
@@ -21,15 +21,18 @@ function CreateRecipe({ user_id }) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                     'UserId': user_id // Pass the logged-in username in the headers
+                    'UserId': user_id // Pass the logged-in username in the headers
                 },
                 body: JSON.stringify(recipeData)
             });
 
             const data = await response.json();
             if (response.ok) {
-                setMessage(data.message);
-                navigate('/dashboard');
+                setMessage('Recipe created successfully'); // Set success message
+                setTimeout(() => {
+                    setMessage(''); // Clear the success message after a certain time
+                    navigate('/dashboard');
+                }, 3000); // Auto-dismiss after 3 seconds
             } else {
                 setMessage(data.error || 'Error creating recipe');
             }
@@ -41,18 +44,29 @@ function CreateRecipe({ user_id }) {
 
     return (
         <div>
-            <h2>Create New Recipe</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
-                <label htmlFor="description">Description:</label>
-                <textarea id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} /><br /><br />
-                <input type="submit" value="Create Recipe" />
-            </form>
-            <div>{message}</div>
+            <div className="add-recipe-container">
+                {message && (
+                    <div className="success-message" style={{ color: 'green', fontWeight: 'bold' }}>
+                        {message}
+                    </div>
+                )}
+                <h2>Create New Recipe</h2>
+                <form onSubmit={handleSubmit} className="recipe-form">
+                    <div>
+                        <label htmlFor="name">Name:</label>
+                        <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                    </div>
+                    <br /><br />
+                    <div>
+                        <label htmlFor="description">Description:</label>
+                        <textarea id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                    </div>
+                    <br /><br />
+                    <input type="submit" value="Create Recipe" className="submit-button" />
+                </form>
+            </div>
         </div>
     );
 }
 
 export default CreateRecipe;
-// In the CreateRecipe component, we use the useNavigate hook from the react-router-dom package to redirect the user to the dashboard page after successfully creating a new recipe. We also pass the logged-in username in the headers of the fetch request to associate the new recipe with the user who created it.
