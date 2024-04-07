@@ -22,7 +22,7 @@ function Dashboard({ username }) {
                 paddingTop: 200,
                 opacity: isVisible ? 1 : 0, // Initially set opacity to 0
                 transition: 'opacity 1s ease-in-out' // Add transition for smooth animation
-            }}>Welcome to Your Kitchen, {username}!</h2>
+            }}>Welcome to Your Kitchen, Chef {username}!</h2>
             <p style={{
                 textAlign: "center",
                 fontSize: 20,

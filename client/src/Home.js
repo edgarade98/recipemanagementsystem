@@ -6,7 +6,7 @@ const Home = () => {
     <div className="landing-page">
       <header>
         <h1>Welcome to The Recipe Hub</h1>
-        <p>Kindly login or sign up to access the application.</p>
+        <p><marquee>Kindly login or sign up to access the application. </marquee></p> 
       
       <section className="hero-section">
         <div className="hero-content">
