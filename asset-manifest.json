@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/recipemanagementsystem/static/css/main.7cf9df01.css",
+    "main.js": "/recipemanagementsystem/static/js/main.db402380.js",
+    "static/js/453.419a5d54.chunk.js": "/recipemanagementsystem/static/js/453.419a5d54.chunk.js",
+    "index.html": "/recipemanagementsystem/index.html",
+    "main.7cf9df01.css.map": "/recipemanagementsystem/static/css/main.7cf9df01.css.map",
+    "main.db402380.js.map": "/recipemanagementsystem/static/js/main.db402380.js.map",
+    "453.419a5d54.chunk.js.map": "/recipemanagementsystem/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7cf9df01.css",
+    "static/js/main.db402380.js"
+  ]
+}
