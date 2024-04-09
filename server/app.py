@@ -76,6 +76,7 @@ def get_recipe(user_id, recipe_id):
     except Exception as e:
         print(e)
         return jsonify({'message': 'Error fetching recipe details'}), 500
+    
 @app.route('/create_user', methods=['POST'])
 def create_user():
     data = request.json

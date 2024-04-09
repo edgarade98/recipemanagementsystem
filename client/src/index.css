@@ -47,7 +47,7 @@ code {
 
 .hero-content {
   flex: 1;
-  padding-right: 50px; /* Adjust spacing between content and image */
+  padding-right: 50px; 
 }
 
 .hero-content h2 {
@@ -68,7 +68,7 @@ code {
   max-width: 100%;
   height: auto;
   border-radius: 20px;
-  padding-right: 100px; /* Optional: Add border radius for a rounded image */
+  padding-right: 100px; 
 }
 
 @media (max-width: 768px) {
@@ -93,51 +93,51 @@ code {
 }
 
 .recipee-cards {
-  display: flex; /* Use flexbox */
+  display: flex; 
   justify-content: space-between; 
   padding-left: 20px;
-  padding-right: 20px;/* Distribute items evenly along the main axis */
+  padding-right: 20px;
 }
 
 .recipe-cards {
-  width: calc(50% - 10px); /* Set width to half of the container minus margin */
-  margin-right: 20px; /* Margin between cards */
-  padding: 40px; /* Padding for internal content */
-  border: 1px solid transparent;/* Border */
-  border-radius: 5px; /* Border radius */
+  width: calc(50% - 10px); 
+  margin-right: 20px; 
+  padding: 40px; 
+  border: 1px solid transparent;
+  border-radius: 5px; 
 }
 
 .recipe-cards:last-child {
-  margin-right: 0; /* Remove margin from the last card */
+  margin-right: 0; 
 }
 
 .recipe-cards img {
-  max-width: 100%; /* Ensure images don't exceed container width */
+  max-width: 100%;
   height: auto;
-  border-radius: 5px; /* Optional: Add border radius for a rounded image */
+  border-radius: 5px; 
 }
 
 .recipe-cards h3 {
-  margin-top: 20px; /* Remove default margin */
+  margin-top: 20px; 
   color: black;
   font-family: monospace;
 }
 
 .recipe-cards p {
-  margin-bottom: 0; /* Remove default margin */
+  margin-bottom: 0;
   font-size: 14px;
   color: black;
 }
 
 .about-section {
-  padding: 30px; /* Padding for internal content */
+  padding: 30px; 
   background-color: #222;
 }
 
 .about-section h2 {
-  font-size: 24px; /* Font size for section heading */
-  color: white; /* Text color */
-  margin-bottom: 30px; /* Margin bottom for spacing */
+  font-size: 24px; 
+  color: white; 
+  margin-bottom: 30px; 
   font-family: monospace;
 
 }
@@ -145,68 +145,70 @@ code {
 .about-section p {
   font-size: 16px; 
   color: white; 
-  line-height: 1.6; /* Line height for readability */
-  margin-bottom: 45px; /* Margin bottom for spacing */
+  line-height: 1.6; 
+  margin-bottom: 45px; 
 }
 
 .about-section ul {
-  list-style-type: none; /* Bullet style */
-  margin-left: 20px; /* Margin left for indentation */
+  list-style-type: none; 
+  margin-left: 20px; 
 }
 
 .about-section ul li {
-  font-size: 16px; /* Font size for list items */
+  font-size: 16px; 
   color: white; 
   margin-bottom: 10px;
   
 }
 
 .footer {
-  background-color: white; /* Background color */
+  background-color: white; 
   color: black; 
 }
 
 .footer-content {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space evenly between sections */
-  max-width: 1200px; /* Limit maximum width */
-  margin: 0 auto; /* Center align */
+  display: flex; 
+  justify-content: space-between; 
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 .footer-section {
-  flex: 1; /* Take up equal space */
-  margin-right: 30px; /* Space between sections */
+  flex: 1; 
+  margin-right: 30px; 
 }
 
 .footer-section h3 {
   font-size: 20px; 
-  margin-bottom: 20px; /* Bottom margin for spacing */
+  margin-bottom: 20px; 
   font-family: monospace;
 }
 
 .footer-section ul {
   list-style-type: none;
-  padding: 0; /* Remove default padding */
+  padding: 0; 
 }
 
 .footer-section ul li {
-  font-size: 16px; /* Font size for list items */
-  margin-bottom: 10px; /* Bottom margin for spacing */
+  font-size: 16px; 
+  margin-bottom: 10px; 
 }
 
 .footer-bottom {
-  background-color: #222; /* Background color for bottom section */
-  padding: 20px; /* Padding for internal content */
-  text-align: center; /* Center-align text */
+  background-color: #222; 
+  padding: 20px; 
+  text-align: center;
 }
 
 .footer-bottom p {
-  margin: 0; /* Remove default margin */
-  font-size: 14px; /* Font size */
+  margin: 0; 
+  font-size: 14px; 
   color: white;
 }
 
+
 /*  NavBar Styling */
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -253,18 +255,17 @@ nav ul li a.active {
   background-color: #333;
 }
 .navigation-container {
-  background-image: url(/Users/winnie/Recipe-Project/client/react-app/src/ba.jpg);
-  background-size: cover; /* Cover the entire element with the background image */
-  background-position: center; /* Center the background image */
+  background-image: url(https://res.cloudinary.com/dswjeyq4u/image/upload/v1712507951/pexels-photo-616401_ebmqkr.jpg);
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
 }
 
-/***************************** Navigation ***************************/
-
 /* LoginForm.css */
+
 .login-container {
-  background-color: rgb(151, 151, 151); /* Background color for the form */
-  padding: 40px; /* Padding for spacing */
+  background-color: rgb(151, 151, 151); 
+  padding: 40px; 
   height: 100vh;
 }
 
@@ -374,7 +375,6 @@ nav ul li a.active {
   background-color: #0056b3;
 }
 
-
 /* NavBar Select CSS */
 
 .navbar-select {
@@ -470,48 +470,49 @@ textarea[id="description"] {
 
 .form-container {
   max-width: 700px;
-  margin: 0 auto;
+  margin-left: 600px;
+  margin-top: 50px;
   padding: 20px;
-  height: 400px;
+  height: 500px;
+  background-color: #c9c5c5;
+  border-radius: 10px;
 }
 
-/* Apply styles to the form heading */
 .form-container h2 {
-  font-size: 24px;
+  font-size: 34px;
   margin-bottom: 20px;
   text-align: center;
+  font-family: monospace;
 }
 
-/* Apply styles to form inputs and labels */
 .form-container label {
-  display: block; /* Make labels block elements for better alignment */
+  display: block;
   margin-bottom: 5px;
 }
 
 .form-container input[type="text"],
 .form-container textarea,
 .form-container select {
-  width: 100%; /* Make inputs and select full width */
-  padding: 8px; /* Add padding for better appearance */
+  width: 100%; 
+  padding: 8px; 
   margin-bottom: 10px;
-  border: 1px solid #ccc; /* Add border */
-  border-radius: 5px; /* Add border radius */
-  box-sizing: border-box; /* Include padding and border in width */
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box;
 }
 
-/* Apply styles to the submit button */
 .form-container button[type="submit"] {
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
-  padding: 10px 20px; /* Add padding */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Add border radius */
-  cursor: pointer; /* Add pointer cursor on hover */
-  transition: background-color 0.3s; /* Add transition effect */
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .form-container button[type="submit"]:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; 
 }
 
 /* All Recipe container CSS  */
@@ -530,17 +531,17 @@ textarea[id="description"] {
 
 .recipe-grid {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+  flex-wrap: wrap; 
 
 }
 
 .recipe-card {
-  width: calc(33.33% - 10px); /* Set card width (1/3 of container width minus margin) */
-  margin: 10px; /* Add margin between cards */
+  width: calc(33.33% - 10px); 
+  margin: 10px; 
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0.9, 0.7, 0.5); /* Add shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0.9, 0.7, 0.5); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -603,30 +604,30 @@ textarea[id="description"] {
 }
 
 .myrecipe-list {
-  list-style-type: none; /* Remove default list styles */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  list-style-type: none; 
+  padding: 0; 
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .myrecipe-item {
-  flex: 0 0 calc(33.33% - 20px); /* Set item width (1/3 of container width minus margin) */
-  background-color: #c9c5c5; /* Light background color */
-  padding: 20px; /* Add padding for spacing */
-  margin: 10px; /* Add margin between items */
-  border-radius: 5px; /* Add rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  flex: 0 0 calc(33.33% - 20px); 
+  background-color: #c9c5c5; 
+  padding: 20px; 
+  margin: 10px; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .myrecipe-item h3 {
-  font-size: 24px; /* Font size for recipe name */
-  margin-bottom: 10px; /* Add some space below recipe name */
+  font-size: 24px; 
+  margin-bottom: 10px; 
   text-align: center;
 }
 
 .myrecipe-item p {
-  font-size: 16px; /* Font size for description */
-  margin-bottom: 10px; /* Add some space below description */
+  font-size: 16px; 
+  margin-bottom: 10px; 
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
@@ -637,7 +638,7 @@ textarea[id="description"] {
   color: red;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 300px;
+  margin-left: 450px;
 }
 
 /* Favorites Section CSS  */
@@ -655,30 +656,30 @@ textarea[id="description"] {
 }
 
 .favrecipe-list {
-  list-style-type: none; /* Remove default list styles */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  list-style-type: none; 
+  padding: 0; 
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .favrecipe-item {
-  flex: 0 0 calc(33.33% - 20px); /* Set item width (1/3 of container width minus margin) */
-  background-color: #c9c5c5; /* Light background color */
-  padding: 20px; /* Add padding for spacing */
-  margin: 10px; /* Add margin between items */
-  border-radius: 5px; /* Add rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  flex: 0 0 calc(33.33% - 20px); 
+  background-color: #c9c5c5; 
+  padding: 20px; 
+  margin: 10px; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .favrecipe-item h3 {
-  font-size: 24px; /* Font size for recipe name */
-  margin-bottom: 10px; /* Add some space below recipe name */
+  font-size: 24px; 
+  margin-bottom: 10px; 
   text-align: center;
 }
 
 .favrecipe-item p {
-  font-size: 16px; /* Font size for description */
-  margin-bottom: 10px; /* Add some space below description */
+  font-size: 16px; 
+  margin-bottom: 10px; 
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }

@@ -1,5 +1,4 @@
-// FavoriteRecipes.js
-// Frontend component to fetch and display favorite recipes
+
 import React, { useState, useEffect } from 'react';
 
 function FavoriteRecipes() {
@@ -26,6 +25,8 @@ function FavoriteRecipes() {
 
         fetchFavoriteRecipes();
     }, []);
+
+    
 
     if (isLoading) {
         return <div>Loading...</div>;

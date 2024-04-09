@@ -31,7 +31,7 @@ function CreateRecipe({ user_id }) {
                 setMessage('Recipe created successfully'); // Set success message
                 setTimeout(() => {
                     setMessage(''); // Clear the success message after a certain time
-                    navigate('/dashboard');
+                    navigate('/my-recipes');
                 }, 3000); // Auto-dismiss after 3 seconds
             } else {
                 setMessage(data.error || 'Error creating recipe');
@@ -45,12 +45,14 @@ function CreateRecipe({ user_id }) {
     return (
         <div>
             <div className="add-recipe-container">
+                
+                <h2>Create New Recipe</h2>
                 {message && (
                     <div className="success-message" style={{ color: 'green', fontWeight: 'bold' }}>
                         {message}
                     </div>
                 )}
-                <h2>Create New Recipe</h2>
+                <br></br>
                 <form onSubmit={handleSubmit} className="recipe-form">
                     <div>
                         <label htmlFor="name">Name:</label>
