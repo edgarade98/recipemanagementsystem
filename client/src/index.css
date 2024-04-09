@@ -684,3 +684,27 @@ textarea[id="description"] {
   text-align: center;
 }
 
+/* scrolling text animation  */
+.scrolling-text {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-text:hover {
+  animation-play-state: paused;
+}
+
+.scrolling-text {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+

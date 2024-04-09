@@ -10,12 +10,12 @@ function CreateUser() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         const userData = {
             username: username,
             password: password
         };
-
+    
         try {
             const response = await fetch('/create_user', {
                 method: 'POST',
@@ -24,14 +24,12 @@ function CreateUser() {
                 },
                 body: JSON.stringify(userData)
             });
-
-            const data = await response.json();
+    
             if (response.ok) {
                 setMessage('User Created Successfully');
                 setTimeout(() => {
                     navigate('/login');
             }, 2000);
-    
             } else {
                 setMessage('Error creating user');
             }
@@ -40,6 +38,7 @@ function CreateUser() {
             setMessage('Error creating user');
         }
     };
+    
 
     return (
         <div className="login-container">

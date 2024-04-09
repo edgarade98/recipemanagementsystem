@@ -7,7 +7,7 @@ function DeleteRecipe({ username }) {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
 
         try {
             const response = await fetch(`/delete_recipe/${recipeId}`, {

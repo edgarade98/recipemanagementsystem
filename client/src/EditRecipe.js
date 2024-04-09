@@ -9,14 +9,12 @@ function EditRecipe({ username }) {
         name: '',
         description: ''
     });
-    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const token = "YOUR_BEARER_TOKEN";  // Replace with your actual token
 
     useEffect(() => {
         const fetchUserRecipes = async () => {
             try {
-                setIsLoading(true);
                 const response = await fetch(`/get_user_recipes/${username}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`  // Use the token for authorization
@@ -30,8 +28,6 @@ function EditRecipe({ username }) {
                 }
             } catch (error) {
                 console.error('Error:', error);
-            } finally {
-                setIsLoading(false);
             }
         };
 
@@ -42,7 +38,6 @@ function EditRecipe({ username }) {
         const fetchRecipeDetails = async () => {
             if (selectedRecipeId && recipes.length > 0) {
                 try {
-                    setIsLoading(true);
                     const response = await fetch(`/get_recipe/${username}/${selectedRecipeId}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`  // Use the token for authorization
@@ -59,8 +54,6 @@ function EditRecipe({ username }) {
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                } finally {
-                    setIsLoading(false);
                 }
             }
         };
@@ -97,7 +90,6 @@ function EditRecipe({ username }) {
         };
     
         try {
-            setIsLoading(true);
             const response = await fetch(`/edit_recipe/${selectedRecipeId}`, {
                 method: 'PUT',
                 headers: {
@@ -118,8 +110,6 @@ function EditRecipe({ username }) {
             }
         } catch (error) {
             console.error('Error:', error);
-        } finally {
-            setIsLoading(false);
         }
     };
 
